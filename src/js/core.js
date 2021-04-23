@@ -1,3 +1,5 @@
+import currencyDict from "./currency-dict.json"
+
 export default class Currency {
   constructor(exchangeRateApiObj) {
     /* eslint-disable camelcase */
@@ -11,5 +13,12 @@ export default class Currency {
   static async process(exchangeRateApiObj) {
     exchangeRateApiObj = new this(exchangeRateApiObj)
     return exchangeRateApiObj
+  }
+
+  static nameFromCode(currencyCode) {
+    const { name } = currencyDict.find(
+      natCurrencyObj => natCurrencyObj.code === currencyCode
+    )
+    return name
   }
 }
