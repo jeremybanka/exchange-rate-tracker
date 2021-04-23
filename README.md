@@ -1,4 +1,4 @@
-#### SSAA: Static Shock and Awe
+## Exchange Rate Tracker
 
 _by Jeremy Banka_
 
