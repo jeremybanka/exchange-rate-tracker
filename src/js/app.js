@@ -4,7 +4,7 @@ import "../styles/font-face.scss"
 // UI
 import $ from "jquery"
 // CORE
-import Log from "./core"
+import Log from "./Log"
 // BIZ
 import Market from "./Market"
 

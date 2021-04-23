@@ -4,7 +4,7 @@ export default class Log {
     this.onRender = onRender
     this.load()
     this.entries = this.entries || []
-    this.$render()
+    this.render()
   }
 
   // BIZ
@@ -25,11 +25,11 @@ export default class Log {
 
   add(entry) {
     this.entries = [entry, ...this.entries]
-    this.$render()
+    this.render()
   }
 
   clear() {
     this.entries = []
-    this.$render()
+    this.render()
   }
 }
