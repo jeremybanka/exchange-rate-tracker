@@ -21,4 +21,26 @@ export default class Currency {
     )
     return name
   }
+
+  static async convert({ original, howMany, to }) {
+    const conversionRate = original.rates[to]
+    const quantityHome = howMany
+    const quantityAway = quantityHome * conversionRate
+    const codeHome = original.code
+    const codeAway = to
+    const nameHome = original.name
+    const nameAway = Currency.nameFromCode(codeAway)
+    return {
+      home: {
+        quantity: quantityHome,
+        code: codeHome,
+        name: nameHome,
+      },
+      away: {
+        quantity: quantityAway,
+        code: codeAway,
+        name: nameAway,
+      },
+    }
+  }
 }
