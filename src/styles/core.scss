@@ -1,0 +1,80 @@
+:root {
+  --bg-color: black;
+  --bg-color-2: #060;
+  --fg-color: #0f0;
+}
+
+body {
+  font-family: Manufab;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: var(--bg-color-2);
+  color: var(--fg-color);
+  header,
+  footer,
+  #bg {
+    flex-grow: 0;
+  }
+  header {
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 50px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    #logo,
+    #clear {
+      height: 30px;
+      width: 30px;
+    }
+    h1 {
+      font-variation-settings: "wght" 700;
+      margin: 0 10px 10px;
+      line-height: 0.8em;
+    }
+    #clear {
+      position: absolute;
+      right: 10px;
+      color: var(--fg-color);
+      font-size: 18px;
+      font-variation-settings: "wght" 300;
+      background: none;
+      border: 2px solid var(--fg-color);
+    }
+  }
+  main {
+    flex-grow: 1;
+  }
+  footer {
+    display: inline;
+    width: 100%;
+    background: var(--bg-color);
+    form {
+      display: inline-flex;
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Icon;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  &:hover,
+  &:focus {
+    transform: scale(1.01);
+  }
+  &:active {
+    transition-duration: 10ms;
+    transform: scale(0.99);
+  }
+}
