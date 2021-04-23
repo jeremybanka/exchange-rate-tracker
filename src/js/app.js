@@ -1,7 +1,12 @@
 // STYLE
 import "../styles/core.scss"
 import "../styles/font-face.scss"
-// LOGIC
-import double from "./core"
+// UI
+import $ from "jquery"
+// BIZ
+import Market from "./core"
 
-double(1)
+$(() => {
+  console.log(process.env.API_KEY)
+  console.log(Market.convertCurrency({ from: `USD`, to: `KRW` }))
+})
