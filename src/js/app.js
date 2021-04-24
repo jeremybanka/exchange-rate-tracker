@@ -3,10 +3,9 @@ import "../styles/core.scss"
 import "../styles/font-face.scss"
 // UI
 import $ from "jquery"
-// CORE
-import Log from "./Log"
 // BIZ
-import Market from "./Market"
+import Log from "./biz/Log"
+import Market from "./biz/Market"
 
 function $printEntries() {
   const $makeEntry = entry => {

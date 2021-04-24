@@ -1,5 +1,5 @@
 export default class Log {
-  constructor({ key = `data`, onRender }) {
+  constructor({ key = `data`, onRender = () => {} }) {
     this.key = key
     this.onRender = onRender
     this.load()
@@ -7,7 +7,6 @@ export default class Log {
     this.render()
   }
 
-  // BIZ
   load() {
     const foundSave = window.localStorage.getItem(`${this.key}-log`)
     if (foundSave) this.entries = JSON.parse(foundSave)
@@ -17,7 +16,6 @@ export default class Log {
     window.localStorage.setItem(`${this.key}-log`, JSON.stringify(this.entries))
   }
 
-  // UI
   render() {
     this.onRender()
     this.save()

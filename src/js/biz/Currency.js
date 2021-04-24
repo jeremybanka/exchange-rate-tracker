@@ -1,4 +1,4 @@
-import currencyDict from "./currency-dict.json"
+import CURRENCY_DICT from "../CURRENCY_DICT.json"
 
 export default class Currency {
   constructor(exchangeRateApiObj) {
@@ -16,7 +16,7 @@ export default class Currency {
   }
 
   static nameFromCode(currencyCode) {
-    const { name } = currencyDict.find(
+    const { name } = CURRENCY_DICT.find(
       natCurrencyObj => natCurrencyObj.code === currencyCode
     )
     return name
