@@ -1,4 +1,4 @@
-import CURRENCY_DICT from "../CURRENCY_DICT.json"
+import CURRENCY_DICT from "../data/CURRENCY_DICT.json"
 
 export default class Currency {
   constructor(exchangeRateApiObj) {
