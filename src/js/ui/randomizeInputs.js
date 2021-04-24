@@ -1,9 +1,9 @@
 import $ from "jquery"
 import { d, whichever } from "../biz/entropy"
-import CURRENCY_DICT from "../data/CURRENCY_DICT.json"
+import CODE_SET from "../data/CODE_SET.json"
 
 export default function $randomizeInputs() {
-  $(`input#from`).val(whichever(CURRENCY_DICT).code)
-  $(`input#to`).val(whichever(CURRENCY_DICT).code)
+  $(`input#from`).val(whichever(CODE_SET))
+  $(`input#to`).val(whichever(CODE_SET))
   $(`input#how-many`).val(d(100))
 }
