@@ -38,7 +38,7 @@ $(() => {
     console.log(`fired submit`)
     const from = $(`input#from`).val()
     const to = $(`input#to`).val()
-    const howMany = parseInt($(`input#how-many`).val(), 10)
+    const howMany = parseInt($(`input#how-many`).val(), 10) || undefined
     Market.convertCurrency({ from, to, howMany }).then(conversion => {
       log.add(conversion)
     })
