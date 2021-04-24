@@ -47,14 +47,98 @@ body {
     }
   }
   main {
+    display: flex;
     flex-grow: 1;
+    flex-direction: column-reverse;
+    > :first-child {
+      background-color: var(--fg-color);
+      color: var(--bg-color);
+    }
+    section {
+      padding: 10px;
+      display: flex;
+      border-top: 2px solid var(--bg-color);
+      .home {
+        width: 20%;
+      }
+      .home,
+      .away {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        .tale,
+        .code {
+          text-align: right;
+        }
+        .tale {
+          font-size: 30px;
+        }
+      }
+    }
   }
   footer {
-    display: inline;
-    width: 100%;
+    padding: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
     background: var(--bg-color);
     form {
-      display: inline-flex;
+      display: flex;
+      position: relative;
+      margin: 20px auto;
+      max-width: 600px;
+      flex-direction: column;
+      &,
+      * {
+        display: inline-flex;
+      }
+      section:first-child {
+        flex-direction: column;
+        input {
+          font-family: Theia;
+          color: var(--fg-color);
+          font-size: 30px;
+          font-weight: 300;
+          background: none;
+          border: 2px solid var(--fg-color);
+          transition-property: background-color outline;
+          transition-duration: 200ms;
+          ~ input {
+            margin-top: 20px;
+          }
+          &:focus-within {
+            outline: 1px solid var(--fg-color);
+            background: #020;
+            font-weight: 400;
+          }
+        }
+      }
+      section:last-child {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        input {
+          font-family: Theia;
+          text-align: end;
+          color: var(--fg-color);
+          font-size: 40px;
+          font-variation-settings: "wght" 600;
+          background: none;
+          border: none;
+          border-bottom: 2px solid var(--fg-color);
+          margin-right: 20px;
+        }
+        button[type="submit"] {
+          font-size: 20px;
+          font-variation-settings: "wght" 300;
+          background: var(--fg-color);
+          color: var(--bg-color);
+          border: none;
+          height: 54px;
+          width: 54px;
+        }
+      }
     }
   }
 }
