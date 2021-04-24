@@ -1,18 +1,14 @@
 /* eslint-disable no-restricted-syntax */
+import $ from "jquery"
+import CODE_NAME_SET from "../data/CODE_NAME_SET.json"
 
-import CODE_SET from "../data/CODE_SET.json"
-import CURRENCY_DICT from "../data/CURRENCY_DICT.json"
+const $makeOption = ({ code, name }) =>
+  $(`<option/>`).attr(`value`, code).text(`${name} (${code})`)
+
+const $makeOptions = () =>
+  CODE_NAME_SET.map(codeNameObj => $makeOption(codeNameObj))
 
 export default function $printSelectOptions() {
-  const codesAndNames = []
-  for (const code of CODE_SET) {
-    const currency = CURRENCY_DICT.find(currency => currency.code === code)
-    if (!currency) {
-      console.log(`couldn't find currency with code`, code)
-      continue
-    }
-    const { name } = currency
-    codesAndNames.push({ name, code })
-  }
-  console.log(codesAndNames)
+  $(`select#from`).append($makeOptions())
+  $(`select#to`).append($makeOptions())
 }

@@ -12,13 +12,13 @@ import Market from "./biz/Market"
 
 $(() => {
   const log = new Log({ key: `conversion`, onRender: $printEntries })
-  $randomizeInputs()
   $printSelectOptions()
+  $randomizeInputs()
   $(`form`).on(`submit`, event => {
     event.preventDefault()
     console.log(`fired submit`)
-    const from = $(`input#from`).val()
-    const to = $(`input#to`).val()
+    const from = $(`select#from`).val()
+    const to = $(`select#to`).val()
     const howMany = parseInt($(`input#how-many`).val(), 10) || undefined
     Market.convertCurrency({ from, to, howMany }).then(conversion => {
       log.add(conversion)
