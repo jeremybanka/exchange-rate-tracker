@@ -4,13 +4,14 @@ import "../styles/font-face.scss"
 // UI
 import $ from "jquery"
 import $printEntries from "./ui/printEntries"
+import $randomizeInputs from "./ui/randomizeInputs"
 // BIZ
 import Log from "./biz/Log"
 import Market from "./biz/Market"
 
 $(() => {
   const log = new Log({ key: `conversion`, onRender: $printEntries })
-
+  $randomizeInputs()
   $(`form`).on(`submit`, event => {
     event.preventDefault()
     console.log(`fired submit`)
