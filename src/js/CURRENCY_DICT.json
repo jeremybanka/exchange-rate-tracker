@@ -48,12 +48,6 @@
     "number": 951
   },
   {
-    "country": "ANTARCTICA",
-    "name": "No universal currency",
-    "code": "",
-    "number": null
-  },
-  {
     "country": "ANTIGUA AND BARBUDA",
     "name": "East Caribbean Dollar",
     "code": "XCD",
@@ -1092,12 +1086,6 @@
     "number": 840
   },
   {
-    "country": "PALESTINE, STATE OF",
-    "name": "No universal currency",
-    "code": "",
-    "number": null
-  },
-  {
     "country": "PANAMA",
     "name": "Balboa",
     "code": "PAB",
@@ -1324,12 +1312,6 @@
     "name": "Rand",
     "code": "ZAR",
     "number": 710
-  },
-  {
-    "country": "SOUTH GEORGIA AND THE SOUTH    SANDWICH ISLANDS",
-    "name": "No universal currency",
-    "code": "",
-    "number": null
   },
   {
     "country": "SOUTH SUDAN",
