@@ -74,19 +74,27 @@ body {
         right: -30px;
         top: 10px;
       }
+      .home {
+        flex-shrink: 1;
+        flex-grow: 1;
+      }
+      .away {
+        flex-shrink: 0;
+        flex-grow: 0;
+      }
       .home,
       .away {
+        width: 50%;
         display: flex;
         position: relative;
         max-width: 300px;
         flex-direction: column;
-        flex-grow: 1;
         .tale,
         .code {
           text-align: right;
         }
         .tale {
-          font-size: 30px;
+          font-size: 27px;
         }
       }
     }
@@ -125,17 +133,29 @@ body {
       section:first-child {
         display: flex;
         flex-direction: column;
-        input {
+        select {
+          -moz-appearance: none;
+          -webkit-appearance: none;
           font-family: Theia;
           color: var(--fg-color);
-          font-size: 30px;
+          font-size: 21px;
           font-weight: 300;
           background: none;
           border: 2px solid var(--fg-color);
-          border-radius: 2px;
+          border-radius: 0;
           transition-property: outline;
           transition-duration: 200ms;
-          ~ input {
+          padding: 5px;
+          position: relative;
+          &::before {
+            content: "v";
+            font-family: Icon;
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+          }
+          ~ select {
             margin-top: 20px;
           }
           &:focus-within {
