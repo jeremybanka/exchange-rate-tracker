@@ -3,7 +3,6 @@
   --bg-color-2: #060;
   --fg-color: #0f0;
 }
-
 body {
   font-family: Manufab;
   width: 100vw;
@@ -18,12 +17,25 @@ body {
   #bg {
     flex-grow: 0;
   }
+  button#clear {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--fg-color);
+    font-size: 18px;
+    font-variation-settings: "wght" 300;
+    background: none;
+    border: 2px solid var(--fg-color);
+    height: 30px;
+    width: 30px;
+  }
   header {
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 50px;
     max-width: 600px;
+    margin: auto;
     display: flex;
     flex-direction: row;
     #logo,
@@ -32,18 +44,12 @@ body {
       width: 30px;
     }
     h1 {
+      display: flex;
+      align-items: center;
+      line-height: 30px;
+      height: 40px;
       font-variation-settings: "wght" 700;
-      margin: 0 10px 10px;
-      line-height: 0.8em;
-    }
-    #clear {
-      position: absolute;
-      right: 10px;
-      color: var(--fg-color);
-      font-size: 18px;
-      font-variation-settings: "wght" 300;
-      background: none;
-      border: 2px solid var(--fg-color);
+      margin: 0 10px;
     }
   }
   main {
@@ -58,12 +64,21 @@ body {
       padding: 10px;
       display: flex;
       border-top: 2px solid var(--bg-color);
-      .home {
-        width: 20%;
+      justify-content: center;
+      position: relative;
+      .home .tale::after {
+        content: "=";
+        font-size: 15px;
+        font-variation-settings: "wght" 200;
+        position: absolute;
+        right: -30px;
+        top: 10px;
       }
       .home,
       .away {
         display: flex;
+        position: relative;
+        max-width: 300px;
         flex-direction: column;
         flex-grow: 1;
         .tale,
@@ -78,22 +93,37 @@ body {
   }
   footer {
     padding: 20px;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: auto;
-    background: var(--bg-color);
+    position: relative;
+    .bg {
+      background: #f003;
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+      &::before {
+        content: "";
+        background: var(--bg-color);
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+      }
+    }
     form {
       display: flex;
       position: relative;
       margin: 20px auto;
+      width: 100%;
       max-width: 600px;
       flex-direction: column;
-      &,
-      * {
-        display: inline-flex;
-      }
       section:first-child {
+        display: flex;
         flex-direction: column;
         input {
           font-family: Theia;
@@ -102,7 +132,8 @@ body {
           font-weight: 300;
           background: none;
           border: 2px solid var(--fg-color);
-          transition-property: background-color outline;
+          border-radius: 2px;
+          transition-property: outline;
           transition-duration: 200ms;
           ~ input {
             margin-top: 20px;
@@ -115,11 +146,14 @@ body {
         }
       }
       section:last-child {
+        width: 100%;
         margin-top: 20px;
         display: flex;
         flex-direction: row;
         input {
-          font-family: Theia;
+          width: 100%;
+          flex-shrink: 1;
+          font-family: Manufab;
           text-align: end;
           color: var(--fg-color);
           font-size: 40px;
@@ -127,9 +161,12 @@ body {
           background: none;
           border: none;
           border-bottom: 2px solid var(--fg-color);
+          border-radius: 0;
+          outline: none;
           margin-right: 20px;
         }
         button[type="submit"] {
+          flex-shrink: 0;
           font-size: 20px;
           font-variation-settings: "wght" 300;
           background: var(--fg-color);
@@ -160,5 +197,13 @@ button {
   &:active {
     transition-duration: 10ms;
     transform: scale(0.99);
+  }
+}
+
+/* Fucking dumbass Chrome (29+) that doesn't render variable fonts right */
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  body header h1 {
+    padding-bottom: 5px;
   }
 }
