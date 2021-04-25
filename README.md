@@ -1,28 +1,52 @@
-## Exchange Rate Tracker
+<img src="./src/images/logo.png" alt="two symmetrical arrows symbolizing equal exchange" height="48" width="48" >
+
+## _E_**XC**_HANGE_ **R**_ATE_
 
 _by Jeremy Banka_
 
 ## Technologies Used
 
-- 📄 HTML5
-- 💅 SASS ➡️ CSS3
+- 📈 exchangerate-api.com
+- 💅 SASS ➡️ CSS3 📄 HTML5
 - ▶️ ES6 🛠 Airbnb ESLint (thanks to VS Code ext. ESLint by Dirk Baeumer)
-- ❓ jest 26.6.3
+- 💲 jquery 3.6.0
 - 📦 Webpack 5 for bundling my js modules.
 - 👨🏻‍🎨 Adobe Illustrator (comps/planning)
 - 🅰️ Fonts and Icons by me using Georg Seifert's _superb_ 💚[Glyphs.app](https://glyphsapp.com)💚
 
 ## Description
 
-This is a template repo for SHOCKING and AWESOME static web development.
+This is a minimal webapp that uses a RESTful API to retrieve up-to-date info about currency exchange rates. You might use this to track the change in a specific rate over time, or just to explore what currencies there are in the world and how many you could purchase for 1 USD.
 
-Includes webpack, jest, and eslint preconfigured. Just get to work!
+#### 🌐 **International**
+
+Supports all listed currencies on exchangerate-api.com.
+
+#### 📜 **Persistent**
+
+Keeps a save in local storage (you can clear this out by clicking the 'x' button)
+
+#### 🎲 **Helpfully Random**
+
+Autofills random currencies and quantity on reload for easy testing.
+
+#### 🦺 **Error-Avoidant**
+
+For queries of X -> Y, entering "0" or "" in the quantity field gets you the going rate of 1 X in Y.
+
+#### 🤑 **Has a Sweet-ass Green UI**
+
+(represents money... 💸 💸 💸 )
+
+#### 🤓 **Educational**
+
+Tells you what all those weird three-letter symbols mean.
 
 ## Setup/Installation Requirements
 
 #### First Things First
 
-- Clone this repo: `$ git clone https://github.com/jeremybanka/ssaa`
+- Clone this repo: `$ git clone https://github.com/jeremybanka/xcr`
 - Get things installed: `$ npm i`
 - Get things built: `$ npm run start`
 - This should prompt your browser to open the project on 8080. It's actually pointed at the dist folder, and will update live.
@@ -44,7 +68,8 @@ Includes webpack, jest, and eslint preconfigured. Just get to work!
 
 ## Known Bugs
 
-- none identified
+- Not really sure what happens when the screen fills up with entries. Probably bad. Let me know!
+- Not as easy as it should be to see the name of a currency you previous queried is if you forget it, and can just see the symbol. The data's there, just gotta show it.
 
 ## License
 
