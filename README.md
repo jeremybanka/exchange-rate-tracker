@@ -1,6 +1,4 @@
-<img src="./src/images/logo.png" alt="two symmetrical arrows symbolizing equal exchange" height="48" width="48" >
-
-## _E_**XC**_HANGE_ **R**_ATE_
+<h2 style="font-weight: regular"><img src="./src/images/logo-dark.png" alt="two symmetrical arrows symbolizing equal exchange" height="30" width="30" style="margin-bottom: -9px" > e<span style="font-weight: bold">xc</span>hange<span style="font-weight: bold">r</span>ate</h2>
 
 _by Jeremy Banka_
 
