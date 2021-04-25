@@ -4,7 +4,7 @@ _by Jeremy Banka_
 
 ## Technologies Used
 
-- 📈 exchangerate-api.com
+- 📈 exchangerate-api.com, 🗃️ iban.com/currency-codes, ⚙️ convertjson.com/html-table-to-json.htm
 - 💅 SASS ➡️ CSS3 📄 HTML5
 - ▶️ ES6 🛠 Airbnb ESLint (thanks to VS Code ext. ESLint by Dirk Baeumer)
 - 💲 jquery 3.6.0
