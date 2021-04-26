@@ -59,6 +59,9 @@ body {
     > :first-child {
       background-color: var(--fg-color);
       color: var(--bg-color);
+      &.error {
+        background-color: #a04;
+      }
     }
     section {
       padding: 10px;
@@ -66,6 +69,9 @@ body {
       border-top: 2px solid var(--bg-color);
       justify-content: center;
       position: relative;
+      &.error {
+        background-color: #f06;
+      }
       .home .tale::after {
         content: "=";
         font-size: 15px;

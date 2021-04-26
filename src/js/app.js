@@ -20,9 +20,25 @@ $(() => {
     const from = $(`select#from`).val()
     const to = $(`select#to`).val()
     const howMany = parseInt($(`input#how-many`).val(), 10) || undefined
-    Market.convertCurrency({ from, to, howMany }).then(conversion => {
-      log.add(conversion)
-    })
+    try {
+      Market.convertCurrency({ from, to, howMany }).then(conversion => {
+        log.add(conversion)
+      })
+    } catch (error) {
+      log.add({
+        error: true,
+        home: {
+          quantity: howMany,
+          code: from,
+          name: `Error`,
+        },
+        away: {
+          quantity: `Error`,
+          code: to,
+          name: `Error`,
+        },
+      })
+    }
     $(`input#how-many`).val(``)
   })
   $(`button#clear`).on(`click`, () => {

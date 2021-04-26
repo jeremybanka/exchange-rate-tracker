@@ -7,6 +7,7 @@ export default function $printEntries() {
     const $entry = $(`<section/>`)
     const $home = $makeSide(entry.home, `home`)
     const $away = $makeSide(entry.away, `away`)
+    if (entry.error) $entry.addClass(`error`)
     return $entry.append($home, $away)
   }
   const $makeSide = (homeOrAway, which) => {
