@@ -60,7 +60,8 @@ body {
       background-color: var(--fg-color);
       color: var(--bg-color);
       &.error {
-        background-color: #a04;
+        background-color: var(--fg-color);
+        color: var(--bg-color);
       }
     }
     section {
@@ -70,7 +71,9 @@ body {
       justify-content: center;
       position: relative;
       &.error {
-        background-color: #f06;
+        --fg-color: #f06;
+        background-color: #803;
+        color: var(--fg-color);
       }
       .home .tale::after {
         content: "=";

@@ -11,8 +11,11 @@ export default class Market {
         if (!response.ok) throw Error(response.statusText)
         return response.json()
       })
+      .then(response => {
+        if (response.result === `error`) throw new Error(response[`error-type`])
+        return response
+      })
       .then(response => Currency.process(response))
       .then(response => Currency.convert({ original: response, to, howMany }))
-      .catch(error => error)
   }
 }

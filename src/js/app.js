@@ -16,29 +16,29 @@ $(() => {
   $randomizeInputs()
   $(`form`).on(`submit`, event => {
     event.preventDefault()
-    console.log(`fired submit`)
     const from = $(`select#from`).val()
     const to = $(`select#to`).val()
     const howMany = parseInt($(`input#how-many`).val(), 10) || undefined
-    try {
-      Market.convertCurrency({ from, to, howMany }).then(conversion => {
+    Market.convertCurrency({ from, to, howMany })
+      .then(conversion => {
         log.add(conversion)
       })
-    } catch (error) {
-      log.add({
-        error: true,
-        home: {
-          quantity: howMany,
-          code: from,
-          name: `Error`,
-        },
-        away: {
-          quantity: `Error`,
-          code: to,
-          name: `Error`,
-        },
+      .catch(error => {
+        console.error(error)
+        log.add({
+          error: true,
+          home: {
+            quantity: howMany,
+            code: from,
+            name: `Error`,
+          },
+          away: {
+            quantity: `Error`,
+            code: to,
+            name: `Error`,
+          },
+        })
       })
-    }
     $(`input#how-many`).val(``)
   })
   $(`button#clear`).on(`click`, () => {
