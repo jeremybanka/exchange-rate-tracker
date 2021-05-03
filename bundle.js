@@ -11835,11 +11835,11 @@ class Market {
   static convertCurrency({ from, to, howMany = 1 }) {
     return fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${from}`)
       .then(response => {
-        if (!response.ok) throw Error(response.statusText)
+        if (!response.ok) throw Error(`Not OK!`)
         return response.json()
       })
       .then(response => {
-        if (response.result === `error`) throw new Error(response[`error-type`])
+        if (response.result === `error`) throw new Error(`Denied!`)
         return response
       })
       .then(response => _Currency__WEBPACK_IMPORTED_MODULE_0__.default.process(response))
@@ -12127,12 +12127,12 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(() => {
           home: {
             quantity: howMany,
             code: from,
-            name: `Error`,
+            name: `not found`,
           },
           away: {
-            quantity: `Error`,
+            quantity: error,
             code: to,
-            name: `Error`,
+            name: `not found`,
           },
         })
       })
