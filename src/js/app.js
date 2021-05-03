@@ -30,12 +30,12 @@ $(() => {
           home: {
             quantity: howMany,
             code: from,
-            name: `Error`,
+            name: `not found`,
           },
           away: {
-            quantity: `Error`,
+            quantity: error,
             code: to,
-            name: `Error`,
+            name: `not found`,
           },
         })
       })

@@ -8,11 +8,11 @@ export default class Market {
   static convertCurrency({ from, to, howMany = 1 }) {
     return fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${from}`)
       .then(response => {
-        if (!response.ok) throw Error(response.statusText)
+        if (!response.ok) throw Error(`Not OK!`)
         return response.json()
       })
       .then(response => {
-        if (response.result === `error`) throw new Error(response[`error-type`])
+        if (response.result === `error`) throw new Error(`Denied!`)
         return response
       })
       .then(response => Currency.process(response))
