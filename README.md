@@ -1,4 +1,4 @@
-<h2 style="font-weight: regular"><img src="./src/images/logo-dark.png" alt="two symmetrical arrows symbolizing equal exchange" height="30" width="30" style="margin-bottom: -9px" > e<span style="font-weight: bold">xc</span>hange<span style="font-weight: bold">r</span>ate</h2>
+<h2 style="font-weight: regular; color: #0f0;"><img src="./src/images/logo-dark.png" alt="two symmetrical arrows symbolizing equal exchange" height="30" width="30" style="margin-bottom: -9px" > e<span style="font-weight: bold; color: #000;">xc</span>hange<span style="font-weight: bold; color: #000;">r</span>ate</h2>
 
 _by Jeremy Banka_
 
@@ -49,6 +49,16 @@ Tells you what all those weird three-letter symbols mean.
 - Get things built: `$ npm run start`
 - This should prompt your browser to open the project on 8080. It's actually pointed at the dist folder, and will update live.
 
+#### Second Things Second
+
+I used an API key from (exchangerate-api.com)[exchangerate-api.com] to develop this app!
+
+- You can use my API key (be gentle, please!) by visiting my deployment at (my gh io / xcr)[jeremybanka.github.io/xcr].
+- But if you want to fork this project and make changes, you need to get your own key!
+- Do so by following the instructions at (the aforementioned website)[exchangerate-api.com].
+- Your key should be a twenty-four-digit hexadecimal number, such as `1e6f2a30a15ee8689d13f60` (that's an example, not a working key as far as I know).
+- Once you have your key, put it in a file called `.env` in your root folder. Now you should get successes instead of errors!
+
 #### ESLint/Prettier Tooling
 
 - Use VS Code.
@@ -67,7 +77,7 @@ Tells you what all those weird three-letter symbols mean.
 ## Known Bugs
 
 - Not really sure what happens when the screen fills up with entries. Probably bad. Let me know!
-- Not as easy as it should be to see the name of a currency you previous queried is if you forget it, and can just see the symbol. The data's there, just gotta show it.
+- Not as easy as it should be to see the what the name of a previously queried currency is if you forget it, and can just see the symbol. The data is there, just gotta show it.
 
 ## License
 
