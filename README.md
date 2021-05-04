@@ -42,24 +42,38 @@ Tells you what all those weird three-letter symbols mean.
 
 ## Setup/Installation Requirements
 
-#### First Things First
+#### 1: Download the Materials
 
 - Clone this repo: `$ git clone https://github.com/jeremybanka/xcr`
-- Get things installed: `$ npm i`
-- Get things built: `$ npm run start`
-- This should prompt your browser to open the project on 8080. It's actually pointed at the dist folder, and will update live.
+- Get your `node_modules` installed: `$ npm i`
 
-#### Second Things Second
+#### 2: Get Your Own Key
 
-I used an API key from (exchangerate-api.com)[exchangerate-api.com] to develop this app!
+I used an API key from [exchangerate-api.com](exchangerate-api.com) to develop this app!
 
-- You can use my API key (be gentle, please!) by visiting my deployment at (my gh io / xcr)[jeremybanka.github.io/xcr].
-- But if you want to fork this project and make changes, you need to get your own key!
-- Do so by following the instructions at (the aforementioned website)[exchangerate-api.com].
-- Your key should be a twenty-four-digit hexadecimal number, such as `1e6f2a30a15ee8689d13f60` (that's an example, not a working key as far as I know).
-- Once you have your key, put it in a file called `.env` in your root folder. Now you should get successes instead of errors!
+- You can use my API key (be gentle, please!) by visiting my deployment at [my gh.io/xcr](jeremybanka.github.io/xcr).
+- But if you want to fork this project and make changes, you need to get your own key! My key isn't in the source files.
+- Get a key by following the instructions at [the aforementioned website](exchangerate-api.com).
+- Your key should be a twenty-four-digit hexadecimal number, such as `1e6f2a30a15ee8689d13f60` (that's an example! not a working key as far as I know...).
 
-#### ESLint/Prettier Tooling
+#### 3: Add Your Key to Your Environment
+
+- Once you have your key, make a file in your root folder called `.env`. This file holds secrets, so sure it's listed in your `.gitignore`!
+- Add a line to this file:
+
+  ```
+  API_KEY=1e6f2a30a15ee8689d13f60
+  ```
+
+  except, put your key right of the `=` instead of the example key there.
+
+#### 4: Build and Run
+
+- Now, get things built: `$ npm run start`
+- This should prompt your browser to open the project on 8080.
+- You can also `$ npm run build` to peep the built code.
+
+#### Tooling: Getting ESLint and Prettier Working Together
 
 - Use VS Code.
 - Install VS Code extension "ESLint" by Dirk Baeumer.
